@@ -1,0 +1,65 @@
+@media only screen and (orientation: portrait) {
+    body {
+        height: 100vw;
+        transform: rotate(90deg);
+    }
+}
+
+body {
+    background-color: #fff;
+    color: #111;
+    margin: 0px;
+    overflow: hidden;
+    font-family: Monospace;
+    font-size: 20px;
+    position: relative;
+}
+
+#info {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    padding: 5px;
+    color: #FFFFFF
+}
+
+#button {
+    position: absolute;
+    width: 60%;
+    top: 60%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    /* text-align: center; */
+}
+
+#container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px;
+    font-weight:bold;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: hsl(0, 0%, 50%);
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+    font-weight:bold;
+    font-size: 20px;
+}
+
+.btn:hover {
+    border-color: black;
+}
