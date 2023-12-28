@@ -75,7 +75,14 @@ function init() {
   document.body.appendChild(renderer.domElement);
   var width = window.innerWidth;
   var height = window.innerHeight;
-  renderer.setSize(width, height);
+
+  if (screen.orientation == "portrait") {
+    renderer.setSize(height, width);
+  }
+  else {
+    renderer.setSize(width, height);
+  }
+  
   scene = new THREE.Scene();
   //鏡頭
   camera = new THREE.OrthographicCamera(-50, 50, 50, -50, -10, 100);
