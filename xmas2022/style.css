@@ -1,9 +1,9 @@
 @media only screen and (orientation: portrait) {
     #button {
         position: absolute;
-        width: 80%;
-        top: 70%;
-        bottom: 5%;
+        width: 90%;
+        top: 65%;
+        bottom: 10%;
         left: 0;
         right: 0;
         margin: auto;
