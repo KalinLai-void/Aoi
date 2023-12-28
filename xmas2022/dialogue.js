@@ -15,6 +15,16 @@ function onWindowResize() {
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
   renderer.setSize(width, height);
+
+  //鏡頭
+  if (window.matchMedia("(orientation: portrait)").matches) {
+    camera = new THREE.OrthographicCamera(-25, 25, 100, -100, -10, 100);
+  } 
+  else {
+    camera = new THREE.OrthographicCamera(-50, 50, 50, -50, -10, 100);
+  }
+  camera.position.z = 40;
+  camera.lookAt(new THREE.Vector3(0, 0, 0));
 }
 
 function buildBackground() {
@@ -75,20 +85,20 @@ function init() {
   document.body.appendChild(renderer.domElement);
   var width = window.innerWidth;
   var height = window.innerHeight;
+  renderer.setSize(width, height);
 
-  if (screen.orientation == "portrait") {
-	renderer.setSize(height, width);
-  }
-  else {
-    renderer.setSize(width, height);
-  }
-  
   scene = new THREE.Scene();
+
   //鏡頭
-  camera = new THREE.OrthographicCamera(-50, 50, 50, -50, -10, 100);
+  if (window.matchMedia("(orientation: portrait)").matches) {
+    camera = new THREE.OrthographicCamera(-25, 25, 100, -100, -10, 100);
+  } 
+  else {
+    camera = new THREE.OrthographicCamera(-50, 50, 50, -50, -10, 100);
+  }
   camera.position.z = 40;
   camera.lookAt(new THREE.Vector3(0, 0, 0));
-  //window.addEventListener('resize', onWindowResize, false);
+  window.addEventListener('resize', onWindowResize, false);
   //////////////////////////////////////////////////////////
   background[0] = new THREE.Mesh(buildBackground(), new THREE.MeshBasicMaterial({
     map: loader.load(
@@ -724,10 +734,21 @@ const textNodes = [{
     text: '我邁開步伐，往家的方向走去，腦中不斷回想剛才發生的事情，嘴角逐漸上揚。',
     options: [{
       text: '明年也約定好了，Aoi',
-      nextText: 0
+      nextText: 46
     }],
     onlySpeak: false,
     os: true,
+	role: -1
+  },
+  {
+    id: 46,
+    text: 'END\n是否重新來過？',
+    options: [{
+      text: 'Yes',
+      nextText: 1
+    }],
+    onlySpeak: false,
+    os: false,
 	role: -1
   },
   {

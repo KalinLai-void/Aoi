@@ -1,11 +1,27 @@
 @media only screen and (orientation: portrait) {
-    body {
-        transform: rotate(90deg);
-        height: 100vh;
-        width: 100vw;
+    #button {
+        position: absolute;
+        width: 80%;
+        top: 70%;
+        bottom: 5%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
     }
+}
 
-    
+@media only screen and (orientation: landscape) {
+    #button {
+        position: absolute;
+        width: 60%;
+        top: 70%;
+        bottom: 5%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+    }
 }
 
 body {
@@ -16,6 +32,8 @@ body {
     font-family: Monospace;
     font-size: 20px;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 #info {
@@ -24,17 +42,6 @@ body {
     width: 100%;
     padding: 5px;
     color: #FFFFFF
-}
-
-#button {
-    position: absolute;
-    width: 60%;
-    top: 60%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    /* text-align: center; */
 }
 
 #container {
