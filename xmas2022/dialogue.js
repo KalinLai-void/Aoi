@@ -1,3 +1,7 @@
+if (screen.orientation == "portrait") {
+    screen.orientation.lock("portrait");
+}
+
 var scene, renderer, camera;
 var role;
 var roles = [];
@@ -77,8 +81,7 @@ function init() {
   var height = window.innerHeight;
 
   if (screen.orientation == "portrait") {
-    screen.orientation.lock("portrait");
-    renderer.setSize(height, width);
+
   }
   else {
     renderer.setSize(width, height);
