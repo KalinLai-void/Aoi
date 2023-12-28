@@ -224,7 +224,8 @@ function showTextNode(textNodeIndex) {
       const button = document.createElement('button');
       button.innerText = option.text;
       button.classList.add('btn');
-      button.addEventListener('click', () => selectOption(option));
+      button.addEventListener('ontouchstart' in window ? 'touchstart' : 'click', 
+								() => selectOption(option));
       optionButtonsElement.appendChild(button);
     }
   })
