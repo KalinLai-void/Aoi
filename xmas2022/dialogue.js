@@ -77,7 +77,7 @@ function init() {
   var height = window.innerHeight;
 
   if (screen.orientation == "portrait") {
-    renderer.setSize(height, width);
+    
   }
   else {
     renderer.setSize(width, height);
