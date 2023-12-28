@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const button = document.createElement('button');
         button.innerText = option.text;
         button.classList.add('btn');
-        button.addEventListener('touchstart' in window ? 'touchstart' : 'click',
+        button.addEventListener(('ontouchstart' in window) ? 'touchstart' : 'click',
                                   () => selectOption(option));
         optionButtonsElement.appendChild(button);
       }
